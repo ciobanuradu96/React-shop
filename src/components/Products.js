@@ -1,12 +1,16 @@
-import React from 'react'
+
 import Product from './Product'
 
-const Products = ({products}) => {
+const Products = ({ products, onFavorite, onAddToCart }) => {
+
     return (
-       <>
-       {products.map((product,id)=>(<Product product={product} key={id}/>))}
-       
-       </>
+
+        <>
+            { products.map((product, id) => (
+                <Product product={product} key={id} onFavorite={onFavorite} onAddToCart={onAddToCart} />
+            ))}
+
+        </>
     )
 }
 
