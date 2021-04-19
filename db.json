@@ -1,0 +1,9 @@
+{
+    "products": [
+      { "id": 1, "name": "Rom Dead Man's Fingers, Spiced Rum, 37.5%, 0.7 l","img":"https://s13emagst.akamaized.net/products/29777/29776362/images/res_bbf3e51822ddd556d4f10952802992e4.jpg?width=450&height=450&hash=244EBF801D99305F99C43EE1958F46B5", "category": "Rom","price":"60 Lei" },
+      { "id": 2, "name": "Rom Peaky Blinder, Black Spiced Rum, 40%, 0.7 l","img":"https://s13emagst.akamaized.net/products/29777/29776380/images/res_a096f89d4b8adde29b106d2a77ed7e21.jpg?width=450&height=450&hash=C7B4D2DBC061EF7D4874F19DFCCBF29C", "category": "Rom","price":"73 Lei" },
+      { "id": 3, "name": "Rom Stroh, 80%, 0.7L","img":"https://s13emagst.akamaized.net/products/30771/30770024/images/res_bda08d2beb1663504f2725c52e42f405.jpg?width=450&height=450&hash=4BFD4D12DB93CC4856869819D3D577A8", "category": "Rom","price":"84 Lei" },
+      { "id": 4, "name": "Rom Captain Morgen Dark, 40% 0.7L","img":"https://s13emagst.akamaized.net/products/30360/30359015/images/res_e1e723f5893d68c958dbde24192cdb8c.jpg?width=450&height=450&hash=D4CC21FA5CAAB5BDE31993D6DC65680B", "category": "Rom","price":"46 Lei" }
+    ]
+
+  }

@@ -1,40 +1,51 @@
 import React from 'react';
-import { IconButton, Button, Container, CssBaseline, AppBar, Toolbar, Typography } from '@material-ui/core';
-import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import PersonIcon from '@material-ui/icons/Person';
+import {useState,useEffect} from 'react'
 import useStyles from "./styles"
+import Header from "./components/Header"
+import Grid from '@material-ui/core/Grid'
+
+import Products from './components/Products';
+
 
 
 
 function App() {
+
+  const [products,setProducts]=useState([])
   const classes = useStyles();
+
+  useEffect(()=>{
+    const getProducts= async ()=>{
+      const productsFromServer= await fetchProducts()
+        setProducts(productsFromServer)
+      }
+      getProducts()
+      
+    },[]
+  )
+
+  const fetchProducts= async()=>{
+    const res=await fetch ('http://localhost:5000/products')
+    const data=await res.json()
+    return data
+  }
+
   return (
     <>
+      
+      <Header/>
+      <Grid container spacing={1} className={classes.container}>
+        <Grid item md={2}/>
+        <Grid item md={2}>MeNU</Grid>
+        <Grid item md={6} container spacing={3} justify="center">
+          
+         <Products products={products}></Products>
+        
+        </Grid>
+        <Grid item md={2}/>
+      </Grid>
 
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h2" className={classes.title}>
-            Test </Typography>
-          <IconButton variant="text" color="default" >
-            <FavoriteIcon></FavoriteIcon>
-          </IconButton>
-          <IconButton variant="text" color="default">
-            <ShoppingBasketIcon></ShoppingBasketIcon> </IconButton>
-          <IconButton variant="text" color="default">
-            <PersonIcon></PersonIcon> </IconButton>
-        </Toolbar>
-      </AppBar>
-
-      <main>
-        <div className={classes.container}>
-          <Container maxWidth="sm">
-            <Typography variant="h1" color="initial" align="center" gutterBottom>
-              Tittle
-              </Typography>
-          </Container>
-        </div>
-      </main>
+   
     </>
 
   );
