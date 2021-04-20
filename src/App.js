@@ -13,6 +13,7 @@ function App() {
 
   const [products, setProducts] = useState([])
   const [favoriteProducts, setFavoriteProducts] = useState([])
+  const [cartItems, setCartItems] = useState([])
   const classes = useStyles();
 
   useEffect(() => {
@@ -36,19 +37,19 @@ function App() {
 
   }
 
-  const addItemToCart = (id) => {
-
+  const addItemToCart = (product) => {
+    setCartItems([...cartItems, product])
   }
 
 
   return (
     <>
 
-      <Header />
+      <Header favoriteProducts={favoriteProducts} cartItems={cartItems} />
       <Grid container spacing={1} className={classes.container}>
         <Grid item xs={false} md={2} />
         <Grid item xs={12} md={8} container spacing={3} justify="center" >
-          <Products products={products} onFavorite={favoriteItem} onAddToCart={addItemToCart}></Products>
+          <Products products={products} onFavorite={favoriteItem} onAddToCart={addItemToCart} onAddToCart={addItemToCart}></Products>
         </Grid>
         <Grid item xs={false} md={2} />
       </Grid>

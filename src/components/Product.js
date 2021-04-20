@@ -25,7 +25,7 @@ const Product = ({ product, onFavorite, onAddToCart }) => {
                     <IconButton onClick={() => onFavorite(product)}>
                         <FavoriteIcon />
                     </IconButton>
-                    <IconButton onClick={() => onAddToCart(product.id)} >
+                    <IconButton onClick={() => onAddToCart(product)} >
                         <ShoppingBasketIcon />
                     </IconButton>
                 </CardActions>
